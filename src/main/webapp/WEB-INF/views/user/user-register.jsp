@@ -24,23 +24,26 @@
 
 <div class="container">
 
-    <form method="POST" action="${contextPath}/login" class="form-signin">
-        <h2 class="form-heading">Log in</h2>
+    <form:form commandName="user" method="POST" id="form"  role="form" action="${contextPath}/register" class="form-signin">
+        <h2 class="form-heading">REGISTER</h2>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${message}</span>
-            <input name="username" type="text" class="form-control" placeholder="Username"
+            <form:input  path="userName" name="username" type="text" required="required" class="form-control" placeholder="Username"
                    autofocus="true"/>
-            <input name="password" type="password" class="form-control" placeholder="Password"/>
+            <form:input name="password" path="password" type="password" required="required" class="form-control" placeholder="Password"/>
             <span>${error}</span>
+
+            <form:input name="namesurname" path="nameSurname"    type="text" class="form-control" required="required" placeholder="Name Surname"/>
+            <span>${error}</span>
+
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
-
+            <button class="btn btn-lg btn-primary btn-block" type="submit">register</button>
         </div>
 
-    </form>
-    <button class="btn btn-lg btn-primary btn-block" onclick="window.location='${contextPath}/register';">Register</button>
+    </form:form>
+
 </div>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
