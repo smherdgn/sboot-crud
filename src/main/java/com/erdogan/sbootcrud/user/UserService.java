@@ -22,6 +22,11 @@ public class UserService {
     }
 
 
+    public User findUserByUserNameAndPassword(String username, String password) {
+        return userRepository.findUserByUserNameAndPassword(username, password);
+    }
+
+
     public void delete(Long userId) {
         userRepository.delete(userId);
     }
