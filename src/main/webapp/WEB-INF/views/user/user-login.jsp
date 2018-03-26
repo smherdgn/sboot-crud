@@ -5,22 +5,19 @@
   Time: 11:52
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
-<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel='stylesheet' type="text/css" href='<%=org.webjars.AssetLocator.getWebJarPath("css/bootstrap.min.css")%>'>
-    <link rel='stylesheet' type="text/css" href='<%=org.webjars.AssetLocator.getWebJarPath("css/bootstrap-theme.min.css")%>'>
     <title>Login</title>
-
 </head>
 
 <body>
+<div id="navbar-right-elements" style="display: none">
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="${contextPath}/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="${contextPath}/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+</div>
 
 <div class="container">
 
@@ -42,7 +39,5 @@
     </form>
     <button class="btn btn-lg btn-primary btn-block" onclick="window.location='${contextPath}/register';">Register</button>
 </div>
-<script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
-<script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
 </body>
 </html>

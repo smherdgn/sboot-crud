@@ -1,21 +1,20 @@
 <%--
   Created by IntelliJ IDEA.
-  User: semih
-  Date: 08.02.2018
-  Time: 11:52
+  User: ibrahim
+  Date: 9.03.2018
+  Time: 00:20
   To change this template use File | Settings | File Templates.
 --%>
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Home</title>
+    <title>Admin Panel</title>
 </head>
 <body>
 <div id="navbar-left-elements" style="display: none">
     <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Manage</a></li>
+        <li><a href="#">Display</a></li>
     </ul>
     <form class="navbar-form navbar-left" action="#">
         <div class="input-group">
@@ -42,7 +41,7 @@
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
 
-        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
+        <h2>You Logged in as an Admin ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
 
     </c:if>
 

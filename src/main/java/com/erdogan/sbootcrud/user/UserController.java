@@ -16,7 +16,7 @@ import javax.validation.Valid;
  */
 @Controller
 @RequestMapping(headers = "Accept=text/html", value = "/")
-public class userController {
+public class UserController {
     @Autowired
     UserService userService;
 

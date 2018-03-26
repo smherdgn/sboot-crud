@@ -14,18 +14,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel='stylesheet' type="text/css" href='<%=org.webjars.AssetLocator.getWebJarPath("css/bootstrap.min.css")%>'>
-    <link rel='stylesheet' type="text/css" href='<%=org.webjars.AssetLocator.getWebJarPath("css/bootstrap-theme.min.css")%>'>
-    <title>Login</title>
-
+    <title>Sign Up</title>
 </head>
 
 <body>
-
+<div id="navbar-right-elements" style="display: none">
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="${contextPath}/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="${contextPath}/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+</div>
 <div class="container">
 
     <form:form commandName="user" method="POST" id="form"  role="form" action="${contextPath}/register" class="form-signin">
-        <h2 class="form-heading">REGISTER</h2>
+        <h2 class="form-heading">Register</h2>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${message}</span>
@@ -39,13 +41,11 @@
 
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">register</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
         </div>
 
     </form:form>
 
 </div>
-<script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
-<script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
 </body>
 </html>
